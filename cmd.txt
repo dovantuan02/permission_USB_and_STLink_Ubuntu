@@ -1,6 +1,3 @@
--- permission USB0 :
-sudo chmod a+rw /dev/ttyUSB0
-
 -- permission ST-linh V2 :
 *** First, we are going to install the necessary libraries and build tools:
 sudo apt-get install git make cmake libusb-1.0-0-dev
@@ -29,3 +26,11 @@ lsusb
 
 *** Check ST-link
 st-info --probe
+
+
+-- permission USB0 :
+sudo chmod a+rw /dev/ttyUSB0
+**** OPEN MINICOM 
+sudo minicom -b 115200 -D /dev/ttyUSB0
+
+make flash dev=/dev/ttyUSB0
